@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { client } from '../lib/client';
 import { Product } from '../components';
+import FilterButtons from '../components/filterButtons';
 
-const explore = ({ products, bannerData }) => {
+const Explore = ({ products }) => {
+  const [item, setItem] = useState(products);
+  const menuItems = [...new Set(products?.map((Val) => Val.category))];
+  const filterItem = (data) => {
+    const newItem = products?.filter((newVal) => {
+      return newVal.category === data;
+    });
+    setItem(newItem);
+  };
+
   return (
-    <div className='explore-container'>
-      {products?.map((product) => (
-        <Product key={product._id} product={product} />
-      ))}
-    </div>
+    <section className='explore'>
+      <FilterButtons
+        filterItem={filterItem}
+        setItem={setItem}
+        menuItems={menuItems}
+        products={products}
+      />
+      <div className='explore-container'>
+        {item?.map((item) => (
+          <Product key={item._id} product={item} />
+        ))}
+      </div>
+    </section>
   );
 };
 
@@ -16,12 +34,9 @@ export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
 
-  const bannerQuery = '*[_type == "banner"]';
-  const bannerData = await client.fetch(bannerQuery);
-
   return {
-    props: { products, bannerData },
+    props: { products },
   };
 };
 
-export default explore;
+export default Explore;

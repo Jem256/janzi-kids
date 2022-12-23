@@ -34,9 +34,6 @@ const Navbar = () => {
           <li className='navbar-item'>
             <Link href='/collections'>Collections</Link>
           </li>
-          <li className='navbar-item'>
-            <Link href='/trending'>Trending</Link>
-          </li>
         </ul>
       </nav>
 
@@ -73,9 +70,6 @@ const Navbar = () => {
               </li>
               <li className='navbar-item'>
                 <Link href='/collections'>Collections</Link>
-              </li>
-              <li className='navbar-item'>
-                <Link href='/trending'>Trending</Link>
               </li>
             </ul>
           </div>
