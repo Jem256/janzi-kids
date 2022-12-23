@@ -22,6 +22,11 @@ a {
   width: 100%;
 }
 
+.home {
+  margin: auto;
+  width: 90%;
+}
+
 .navbar-container{
   display: flex;
   justify-content: space-evenly;
@@ -181,7 +186,6 @@ a {
   height: 500px;
   line-height: 0.9; 
   width: 100%;
-
 }
 .hero-banner-container .beats-solo{
   font-size: 20px;
@@ -783,17 +787,21 @@ padding: 6px;
   }
 
   .hero-banner-container{
-    height: 560px;
+    height: fit-content;
+    line-height: 1.3;
+    padding: 40px 30px;
+
   }
   .hero-banner-image{
     width: 77%;
-    height: 62%;
-    top: -2%;
+    height: 77%;
+    top: 30%;
     right: -6%;
   }
   .footer-banner-container{
-    height: 560px;
+    height: fit-content;
     margin-top: 80px;
+    padding: 20px 10px;
   }
   .footer-banner-image{
     width: 77%;
@@ -822,9 +830,6 @@ padding: 6px;
     flex-wrap: wrap;
     gap: 20px;
   }
-  .hero-banner-container{
-    line-height: 1.3;
-  }
   .hero-banner-container h1{
     font-size: 50px;
   }
@@ -840,14 +845,16 @@ padding: 6px;
   }
   .product-detail-container{
     flex-wrap: wrap;
-    }
+    align-items: center;
+    justify-content: center;
+  }
   .product-detail-container .product-detail-image{
     width: 350px;
     height: 350px;
   }
   .cart-container{
-    width: 415px;
-  padding: 4px;
+    width: 100%;
+    padding: 4px;
   }
   .cart-heading{
     margin-top: 35px;
@@ -924,7 +931,7 @@ padding: 6px;
   }
   .filter-btns button {
     padding: 0.3rem 0.8rem;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     width: 100px;
   }

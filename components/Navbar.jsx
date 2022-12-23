@@ -63,13 +63,19 @@ const Navbar = () => {
             </span>
             <ul>
               <li className='navbar-item'>
-                <Link href='/'>Home</Link>
+                <Link href='/' onClick={() => setOpenMenu(false)}>
+                  Home
+                </Link>
               </li>
               <li className='navbar-item'>
-                <Link href='/explore'>Explore</Link>
+                <Link href='/explore' onClick={() => setOpenMenu(false)}>
+                  Explore
+                </Link>
               </li>
               <li className='navbar-item'>
-                <Link href='/collections'>Collections</Link>
+                <Link href='/collections' onClick={() => setOpenMenu(false)}>
+                  Collections
+                </Link>
               </li>
             </ul>
           </div>

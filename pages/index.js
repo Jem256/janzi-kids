@@ -4,7 +4,7 @@ import { Product, FooterBanner, HeroBanner } from '../components';
 
 const Home = ({ products, bannerData }) => {
   return (
-    <>
+    <div className='home'>
       <HeroBanner heroBanner={bannerData?.length && bannerData[0]} />
       <section>
         <div className='products-heading'>
@@ -27,7 +27,7 @@ const Home = ({ products, bannerData }) => {
         </div>
       </section>
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
-    </>
+    </div>
   );
 };
 
